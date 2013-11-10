@@ -10,4 +10,3 @@ make lapacklib
 make clean
 cp liblapack.a /usr/local/lib
 echo "Created liblapack.a in /usr/local/lib"
-export LAPACK=/usr/local/lib/liblapack.a
