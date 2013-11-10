@@ -12,7 +12,10 @@ RUN apt-get install -y openssh-server git-core curl wget vim-tiny
 RUN apt-get install -y gfortran build-essential make gcc build-essential
 
 # install python
-RUN apt-get install -y python python-dev
+RUN apt-get install -y python-software-properties
+RUN add-apt-repository -y ppa:fkrull/deadsnakes
+RUN apt-get update
+RUN apt-get install -y python2.4 python2.4-dev
 
 # database client
 # sqllite client

@@ -12,4 +12,6 @@ do
    #   [2] tag name
    echo "Running command: perl -X ./docker-compile.pl $dir $ORG$dir2 latest"
    nohup time perl -X ./docker-compile.pl $dir $ORG$dir2 latest > ./$dir2.log 2<&1 &
+   # sleep to avoid locked docker database
+   sleep 2
 done

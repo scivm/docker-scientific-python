@@ -15,7 +15,7 @@ RUN apt-get install -y gfortran build-essential make gcc build-essential
 RUN apt-get install -y python-software-properties
 RUN add-apt-repository -y ppa:fkrull/deadsnakes
 RUN apt-get update
-RUN apt-get install -y python2.4 python2.4-dev
+RUN apt-get install -y python3.1 python3.1-dev
 
 # database client
 # sqllite client
