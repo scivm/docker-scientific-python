@@ -107,6 +107,7 @@ RUN pip install PyYAML==3.10
 #RUN pip install rpy2==2.3.8
 RUN pip install scikits-image==0.7.1
 RUN pip install scikit-learn==0.14.1
+RUN pip install patsy==0.2.1
 RUN pip install statsmodels==0.5.0
 RUN pip install simplejson==3.3.1
 RUN pip install six==1.4.1
