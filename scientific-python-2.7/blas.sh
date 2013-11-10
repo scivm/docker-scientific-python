@@ -12,4 +12,5 @@ ar r libfblas.a *.o
 ranlib libfblas.a
 rm -rf *.o
 cp libfblas.a /usr/local/lib
+echo "Created libfblas in /usr/local/lib"
 export BLAS=/usr/local/lib/libfblas.a

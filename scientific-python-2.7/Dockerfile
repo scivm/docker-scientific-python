@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # basic tools
-RUN apt-get install -y openssh-server git-core curl wget
+RUN apt-get install -y openssh-server git-core curl wget vim-tiny
 
 # compilers
 RUN apt-get install -y gfortran build-essential make gcc build-essential
