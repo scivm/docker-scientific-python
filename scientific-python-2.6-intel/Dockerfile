@@ -45,7 +45,7 @@ RUN rm -f /get-pip.py
 RUN apt-get install -y libfreetype6 libfreetype6-dev
 
 # python-PIL
-RUN apt-get install -y python-imaging libpng-dev 
+#RUN apt-get install -y python-imaging libpng-dev 
 
 # pyzmq
 RUN apt-get install -y libzmq-dev

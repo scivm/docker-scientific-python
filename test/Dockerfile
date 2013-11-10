@@ -16,5 +16,5 @@ ADD repo.sh /tmp/repo.sh
 ADD fkrull-deadsnakes-precise.list /tmp/fkrull-deadsnakes-precise.list
 RUN chmod 755 /tmp/repo.sh; /tmp/repo.sh
 RUN apt-get update
-RUN apt-get install -y python3.1 python3.1-dev
+RUN apt-get install -y python2.6 python2.6-dev
 
