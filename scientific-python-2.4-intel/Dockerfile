@@ -31,10 +31,12 @@ RUN apt-get install -y libxml2-dev libxslt-dev
 # distribute
 RUN wget http://python-distribute.org/distribute_setup.py 
 RUN python distribute_setup.py
+RUN rm -f /distribute_setup.py
 
 # pip
 RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py 
 RUN python get-pip.py
+RUN rm -f /get-pip.py
 
 RUN apt-get install -y libfreetype6 libfreetype6-dev
 
