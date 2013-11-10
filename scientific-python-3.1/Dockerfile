@@ -12,8 +12,9 @@ RUN apt-get install -y openssh-server git-core curl wget vim-tiny
 RUN apt-get install -y gfortran build-essential make gcc build-essential
 
 # install python
-RUN apt-get install -y python-software-properties
-RUN add-apt-repository -y ppa:fkrull/deadsnakes
+ADD repo.sh /tmp/repo.sh
+ADD fkrull-deadsnakes-precise.list /tmp/fkrull-deadsnakes-precise.list
+RUN chmod 755 /tmp/repo.sh; /tmp/repo.sh
 RUN apt-get update
 RUN apt-get install -y python3.1 python3.1-dev
 
