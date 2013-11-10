@@ -13,3 +13,5 @@ ranlib libfblas.a
 rm -rf *.o
 cp libfblas.a /usr/local/lib
 echo "Created libfblas in /usr/local/lib"
+# cleanup
+rm -r -f /root/src

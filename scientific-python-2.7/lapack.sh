@@ -10,3 +10,5 @@ make lapacklib
 make clean
 cp liblapack.a /usr/local/lib
 echo "Created liblapack.a in /usr/local/lib"
+# cleanup
+rm -r -f /root/src
