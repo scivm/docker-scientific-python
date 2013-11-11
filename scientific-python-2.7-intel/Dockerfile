@@ -33,6 +33,11 @@ RUN apt-get install -y libxml2-dev libxslt-dev
 # atlas needed for scikit-learn
 #RUN apt-get install -y libatlas-dev libatlas3-base
 
+# distribute
+RUN wget http://python-distribute.org/distribute_setup.py
+RUN python distribute_setup.py
+RUM rm -f /distribute*
+
 # pip
 RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py 
 RUN python get-pip.py

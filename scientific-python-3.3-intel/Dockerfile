@@ -53,6 +53,11 @@ ADD lapack.sh /tmp/lapack.sh
 RUN chmod 755 /tmp/lapack.sh; /tmp/lapack.sh
 ENV LAPACK /usr/local/lib/liblapack.a
 
+# distribute
+RUN wget http://python-distribute.org/distribute_setup.py
+RUN python distribute_setup.py
+RUM rm -f /distribute*
+
 # pip
 RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py
 RUN python get-pip.py
