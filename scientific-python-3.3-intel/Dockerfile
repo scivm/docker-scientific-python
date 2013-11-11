@@ -17,7 +17,6 @@ ADD fkrull-deadsnakes-precise.list /tmp/fkrull-deadsnakes-precise.list
 RUN chmod 755 /tmp/repo.sh; /tmp/repo.sh
 RUN apt-get update
 RUN apt-get install -y python3.3 python3.3-dev
-RUN apt-get install -y python-virtualenv
 
 # database client
 # sqllite client
@@ -30,14 +29,6 @@ RUN apt-get -y install libmysqlclient-dev
 # needed for httplib2
 RUN apt-get install -y libxml2-dev libxslt-dev
 
-# atlas needed for scikit-learn
-#RUN apt-get install -y libatlas-dev libatlas3-base
-
-# pip
-RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py 
-RUN python get-pip.py
-RUN rm -f /get-pip.py
-
 RUN apt-get install -y libfreetype6 libfreetype6-dev
 
 # python-PIL
@@ -45,6 +36,8 @@ RUN apt-get install -y python-imaging libpng-dev
 
 # pyzmq
 RUN apt-get install -y libzmq-dev
+
+# atlas
 
 # hdf5
 ADD hdf5_install.sh /tmp/hdf5_install.sh
@@ -59,6 +52,16 @@ ENV BLAS /usr/local/lib/libfblas.a
 ADD lapack.sh /tmp/lapack.sh
 RUN chmod 755 /tmp/lapack.sh; /tmp/lapack.sh
 ENV LAPACK /usr/local/lib/liblapack.a
+
+# pip
+RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+RUN python get-pip.py
+RUN rm -f /get-pip.py
+
+# virtualenv
+# This gets a current version.  Do not use the version packaged with ubuntu
+RUN pip install virtualenv==1.10.1
+
 
 # scientific python packages
 ADD packages.sh /tmp/packages.sh
